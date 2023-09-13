@@ -1,0 +1,12 @@
+{
+  "folderId": 7369,
+  "prodFileId": 7372,
+  "componentType": "PC",
+  "content": "",
+  "commitInfo": "video",
+  "debugger": "pc-spa",
+  "comAry": {
+    "test": ["./src/top-menu/com.json"],
+    "publish": ["./src/top-menu/com.json"]
+  }
+}

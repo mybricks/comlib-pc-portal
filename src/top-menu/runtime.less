@@ -1,0 +1,196 @@
+.top-menu {
+  height: 100%;
+  background-color: var(--portal--backgroundColor, rgb(6, 8, 13));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.04),
+      0 2px 8px 2px rgba(0, 0, 0, 0.02), 0 4px 7px 1px rgba(0, 0, 0, 0.05);
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s;
+
+    &--ct {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &--left {
+      display: flex;
+      align-items: center;
+
+      :global {
+        .ant-btn-link {
+          //color: #fff;
+          color: var(--portal--color, #fff);
+          font-size: var(--portal--fontSize, 16px);
+          font-style: var(--portal--fontStyle, normal);
+          letter-spacing: var(--portal--letterSpacing, 0px);
+          font-weight: var(--portal--fontWeight, 400);
+          &:hover {
+            color: #327dff;
+          }
+        }
+      }
+      &-sticky {
+        :global {
+          .ant-btn-link {
+            color: #252626;
+          }
+        }
+      }
+      img {
+        height: 32px;
+      }
+      &-popover {
+        width: 100%;
+        left: 0 !important;
+        top: 100% !important;
+        transform-origin: 0 !important;
+        padding-top: var(--portal--contentHeight, 64px);
+        :global {
+          .ant-popover-arrow {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &--right {
+      display: flex;
+      align-items: center;
+
+      :global {
+        .ant-btn-link {
+          //color: #fff;
+          color: var(--portal--color, #fff);
+          font-size: var(--portal--fontSize, 16px);
+          font-style: var(--portal--fontStyle, normal);
+          letter-spacing: var(--portal--letterSpacing, 0px);
+          font-weight: var(--portal--fontWeight, 400);
+          &:hover {
+            color: #327dff;
+          }
+        }
+      }
+
+      &-sticky {
+        :global {
+          .ant-btn-link {
+            color: #252626;
+          }
+        }
+      }
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+      &-popover {
+        img {
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+
+.pop-over {
+  &-container {
+    background-color: #fff;
+    background-image: linear-gradient(
+      90deg,
+      #fafafa,
+      #fafafa 50%,
+      #fff 51%,
+      #fff
+    );
+    display: flex;
+    justify-content: center;
+    margin: -16px;
+  }
+
+  &-content {
+    display: flex;
+
+    &__left {
+      width: 200px;
+      padding: 20px 0;
+      background-color: #fafafa;
+      &--item {
+        display: flex;
+        padding: 6px 16px;
+        justify-content: space-between;
+        align-items: center;
+        &-active {
+          color: rgb(50, 125, 255);
+          background-color: #fff;
+        }
+      }
+      &-popover {
+        .ant-popover-inner {
+          padding: 0;
+        }
+      }
+    }
+
+    &__mid {
+      flex: 1;
+      width: 100%;
+      padding: 16px;
+      border-right: 1px solid #f0f2f5;
+      background-color: #fff;
+      &--item {
+        display: inline-block;
+        width: 33.3333%;
+        margin-bottom: 12px;
+        color: rgb(6, 8, 13);
+        &:hover {
+          color: #327dff;
+        }
+      }
+    }
+
+    &__right {
+      width: 270px;
+      padding-left: 24px;
+      padding-top: 16px;
+      &--item {
+        padding-bottom: 24px;
+        padding-top: 12px;
+        p {
+          font-weight: 600;
+          margin-bottom: 12px;
+        }
+
+        a {
+          color: #252626;
+          margin-bottom: 6px;
+          &:hover {
+            color: #327dff;
+          }
+        }
+        &:first-child {
+          border-bottom: 1px solid #f0f2f5;
+        }
+      }
+    }
+  }
+}

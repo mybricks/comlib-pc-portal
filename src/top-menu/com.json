@@ -1,0 +1,56 @@
+{
+  "title": "顶部菜单",
+  "enable": true,
+  "namespace": "fangzhou.portal-pc.top-menu",
+  "author": "",
+  "author_name": "",
+  "version": "1.0.16",
+  "description": "门户类顶部菜单",
+  "icon": "./icon.svg",
+  "data": "./data.json",
+  "runtime": "./runtime.tsx",
+  "editors": "./editors.tsx",
+  "upgrade": "./upgrade.ts",
+  "inputs": [
+    {
+      "id": "data",
+      "title": "输入数据",
+      "schema": {
+        "type": "any"
+      }
+    },
+    {
+      "id": "headSrc",
+      "title": "设置头像地址",
+      "schema": {
+        "type": "string"
+      }
+    },
+    {
+      "id": "userName",
+      "title": "设置头像名称",
+      "schema": {
+        "type": "string"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "id": "submit",
+      "title": "数据输出",
+      "schema": {
+        "type": "any"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "id": "menuContent",
+      "title": "子菜单自定义内容"
+    },
+    {
+      "id": "topActions",
+      "title": "顶部自定义内容"
+    }
+  ]
+}

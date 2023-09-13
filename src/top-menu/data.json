@@ -1,0 +1,126 @@
+{
+  "logo": "https://ali2.a.kwimgs.com/kos/nlav11092/_2020_Logo__.b943df437e8ac187.png",
+  "leftMenus": [
+    {
+      "label": "全部产品",
+      "type": "menu",
+      "menus": [
+        {
+          "label": "持续交付",
+          "subMenus": [
+            {
+              "label": "混合计算",
+              "url": "http://k.com"
+            },
+            {
+              "label": "混合计算",
+              "url": "http://k.com"
+            },
+            {
+              "label": "混合计算",
+              "url": "http://k.com"
+            },
+            {
+              "label": "混合计算",
+              "url": "http://k.com"
+            },
+            {
+              "label": "混合计算",
+              "url": "http://k.com"
+            },
+            {
+              "label": "混合计算",
+              "url": "http://k.com"
+            },
+            {
+              "label": "混合计算",
+              "url": "http://k.com"
+            },
+            {
+              "label": "混合计算",
+              "url": "http://k.com"
+            },
+            {
+              "label": "混合计算",
+              "url": "http://k.com"
+            },
+            {
+              "label": "混合计算",
+              "url": "http://k.com"
+            },
+            {
+              "label": "混合计算",
+              "url": "http://k.com"
+            }
+          ]
+        },
+        {
+          "label": "资源管理",
+          "subMenus": [
+            {
+              "label": "流程中心",
+              "url": "http://k.com"
+            },
+            {
+              "label": "堡垒机",
+              "url": "http://k.com"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "技术论坛",
+      "url": "http://k.com",
+      "type": "link"
+    }
+  ],
+  "rightButtons": [
+    {
+      "label": "控制台",
+      "url": "http://k.com"
+    },
+    {
+      "label": "权限中心",
+      "url": "http://k.com"
+    }
+  ],
+  "rightPopoverButtons": [
+    {
+      "label": "权限中心",
+      "url": "http://k.com"
+    },
+    {
+      "label": "消息中心",
+      "url": "http://k.com"
+    },
+    {
+      "label": "产品入驻管理",
+      "url": "http://k.com"
+    },
+    {
+      "label": "后台管理",
+      "url": "http://k.com"
+    },
+    {
+      "label": "退出",
+      "url": "http://k.com"
+    }
+  ],
+  "contentWidth": 1440,
+  "rightMenuType": "default",
+  "src": "https://cdn.pixabay.com/photo/2013/05/12/18/55/balance-110850__480.jpg",
+  "name": "username",
+  "backgroundColor": "#434343",
+  "contentHeight": "64px",
+  "isShow": true,
+  "textColor": "#fff",
+  "style": {
+    "fontWeight": 400,
+    "fontSize": "16px",
+    "fontStyle": "normal",
+    "letterSpacing": "0px",
+    "color": "#fff"
+  },
+  "logoSize": [32, 86]
+}
