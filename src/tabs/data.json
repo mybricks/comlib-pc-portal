@@ -1,0 +1,21 @@
+{
+  "tabList": [
+    {
+      "name": "标签页",
+      "key": "tab0",
+      "id": "tab0",
+      "style": {
+        "lineHeight": "22px"
+      },
+      "activeStyle": {
+        "color": "#0075ff",
+        "lineHeight": "22px"
+      }
+    }
+  ],
+  "defaultActiveKey": null,
+  "type": "card",
+  "centered": false,
+  "tabPosition": "top",
+  "prohibitClick": false
+}

@@ -1,0 +1,57 @@
+.tabbox {
+  :global {
+    .ant-tabs-tab .anticon {
+      margin-right: 4px;
+    }
+  }
+  &.hideBorder {
+    :global {
+      .ant-tabs-nav {
+        &::before {
+          border-bottom: none !important;
+        }
+      }
+    }
+  }
+  &.showBorder {
+    :global {
+      .ant-tabs-nav {
+        &::before {
+          border-bottom: 1px solid #f0f0f0 !important;
+        }
+      }
+    }
+  }
+  &.hidePadding {
+    :global {
+      .ant-tabs-nav {
+        margin: 0 !important;
+      }
+      .ant-tabs-tab {
+        padding: 0 !important;
+      }
+    }
+  }
+  &.showPadding {
+    :global {
+      .ant-tabs-nav {
+        margin: 0 0 16px !important;
+      }
+      .ant-tabs-tab {
+        padding: 12px 0 !important;
+      }
+    }
+  }
+  .minHeight {
+    min-height: 100px;
+  }
+  .content {
+    height: 100%;
+  }
+  .tabTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,13 +1,13 @@
 {
   "folderId": 7369,
-  "fileId":6807,
+  "fileId": 6807,
   "commitInfo": "update",
   "namespace": "mybricks.pc-portal",
   "componentType": "PC",
   "content": "",
   "debugger": "pc-spa",
   "comAry": {
-    "test": ["./src/top-menu/com.json"],
-    "publish": ["./src/top-menu/com.json"]
+    "test": ["./src/top-menu/com.json", "./src/tabs/com.json"],
+    "publish": ["./src/top-menu/com.json", "./src/tabs/com.json"]
   }
 }
