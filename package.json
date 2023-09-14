@@ -1,6 +1,6 @@
 {
   "name": "comlib-pc-portal",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "通用门户组件库",
   "main": "index.js",
   "scripts": {
@@ -18,8 +18,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@m-ui/icons": "^2.5.0",
-    "m-ui": "1.11.1"
+    "@ant-design/icons": "4.7.0",
+    "antd": "4.21.6"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",

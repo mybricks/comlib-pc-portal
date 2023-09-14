@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { RightOutlined } from '@m-ui/icons';
+import { RightOutlined } from '@ant-design/icons';
 import css from '../runtime.less';
 
 const list = [
