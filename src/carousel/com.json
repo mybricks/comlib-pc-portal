@@ -1,0 +1,19 @@
+{
+  "title": "轮播图",
+  "namespace": "fangzhou.portal-pc.carousel",
+  "author": "tangxiaoxin",
+  "author_name": "唐小新",
+  "version": "1.0.2",
+  "description": "轮播图",
+  "icon": "./icon.png",
+  "data": "./data.json",
+  "runtime": "./runtime.tsx",
+  "editors": "./editors.tsx",
+  "docs": "https://docs.corp.kuaishou.com/k/home/VPmjD0Bz8thQ/fcAAx3j5KJc1D41Gw3msuM1E5#section=h.eelt92ng22ak",
+  "inputs": [],
+  "outputs": [],
+  "slots": [
+    { "title": "轮播图1", "id": "slot1" },
+    { "title": "轮播图2", "id": "slot2" }
+  ]
+}
