@@ -19,6 +19,8 @@
   "license": "ISC",
   "dependencies": {
     "@ant-design/icons": "4.7.0",
+    "flv.js": "^1.6.2",
+    "hls.js": "^1.1.5",
     "antd": "4.21.6"
   },
   "devDependencies": {
