@@ -1,0 +1,27 @@
+{
+  "title": "播放器",
+  "namespace": "fangzhou.portal-pc.video",
+  "author": "tangxiaoxin",
+  "author_name": "唐小新",
+  "version": "1.0.2",
+  "description": "播放器",
+  "icon": "https://ali-ec.static.yximgs.com/udata/pkg/eshop/fangzhou/images/video.bf1c074e995482ee.png",
+  "data": "./data.json",
+  "runtime": "./runtime.tsx",
+  "editors": "./editors.tsx",
+  "docs": "https://docs.corp.kuaishou.com/k/home/VPmjD0Bz8thQ/fcAAx3j5KJc1D41Gw3msuM1E5#section=h.eelt92ng22ak",
+  "inputs": [
+    {
+      "id": "link",
+      "title": "视频链接",
+      "schema": {
+        "type": "string"
+      }
+    },
+    {
+      "id": "screenshot",
+      "title": "截屏"
+    }
+  ],
+  "outputs": []
+}
