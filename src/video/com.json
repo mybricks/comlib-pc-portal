@@ -1,6 +1,7 @@
 {
   "title": "播放器",
   "namespace": "fangzhou.portal-pc.video",
+  "visibility": false,
   "author": "tangxiaoxin",
   "author_name": "唐小新",
   "version": "1.0.2",
