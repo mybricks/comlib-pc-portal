@@ -4,7 +4,7 @@
   "namespace": "fangzhou.portal-pc.top-menu",
   "author": "",
   "author_name": "",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "门户类顶部菜单",
   "icon": "./icon.svg",
   "data": "./data.json",

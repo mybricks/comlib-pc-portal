@@ -1,5 +1,5 @@
 {
-  "logo": "https://ali2.a.kwimgs.com/kos/nlav11092/_2020_Logo__.b943df437e8ac187.png",
+  "logo": "https://mybricks.world/icon.png",
   "leftMenus": [
     {
       "label": "全部产品",
@@ -122,5 +122,5 @@
     "letterSpacing": "0px",
     "color": "#fff"
   },
-  "logoSize": [32, 86]
+  "logoSize": [60, 60]
 }
