@@ -7,7 +7,18 @@
   "content": "",
   "debugger": "pc-spa",
   "comAry": {
-    "test": ["./src/top-menu/com.json", "./src/tabs/com.json", "./src/carousel/com.json", "./src/video/com.json"],
-    "publish": ["./src/top-menu/com.json", "./src/tabs/com.json", "./src/carousel/com.json", "./src/video/com.json"]
-  }
+    "test": [
+      "./src/top-menu/com.json",
+      "./src/tabs/com.json",
+      "./src/carousel/com.json",
+      "./src/video/com.json"
+    ],
+    "publish": [
+      "./src/top-menu/com.json",
+      "./src/tabs/com.json",
+      "./src/carousel/com.json",
+      "./src/video/com.json"
+    ]
+  },
+  "tags": "react"
 }
