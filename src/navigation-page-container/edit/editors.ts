@@ -75,14 +75,14 @@ export default {
               type: 'text',
               value: 'title'
             },
-            {
-              title: '唯一标识',
-              type: 'text',
-              value: 'key',
-              ifVisible(item) {
-                return item.menuType === 'menu';
-              },
-            },
+            // {
+            //   title: '唯一标识',
+            //   type: 'text',
+            //   value: 'key',
+            //   ifVisible(item) {
+            //     return item.menuType === 'menu';
+            //   },
+            // },
             {
               title: '访问地址',
               type: 'textArea',
@@ -144,28 +144,28 @@ export default {
           }
         }
       },
-      {
-        title: '唯一标识',
-        type: 'text',
-        description: '用于路由跳转hash以及权限配置',
-        ifVisible({ data, focusArea }) {
-          if (!focusArea) return false
-          const menuItem = findMenuItem({ menuItems: data.middleArea.sider.menuItems, id: focusArea.dataset['menuId'] })
-          return menuItem ? menuItem.menuType === 'menu' : false
-        },
-        value: {
-          get({ data, focusArea }) {
-            if (!focusArea) return
-            const menuItem = findMenuItem({ menuItems: data.middleArea.sider.menuItems, id: focusArea.dataset['menuId'] })
-            return menuItem.key
-          },
-          set({ data, focusArea }, value) {
-            if (!focusArea) return
-            const menuItem = findMenuItem({ menuItems: data.middleArea.sider.menuItems, id: focusArea.dataset['menuId'] })
-            menuItem.key = value
-          }
-        }
-      },
+      // {
+      //   title: '唯一标识',
+      //   type: 'text',
+      //   description: '用于路由跳转hash以及权限配置',
+      //   ifVisible({ data, focusArea }) {
+      //     if (!focusArea) return false
+      //     const menuItem = findMenuItem({ menuItems: data.middleArea.sider.menuItems, id: focusArea.dataset['menuId'] })
+      //     return menuItem ? menuItem.menuType === 'menu' : false
+      //   },
+      //   value: {
+      //     get({ data, focusArea }) {
+      //       if (!focusArea) return
+      //       const menuItem = findMenuItem({ menuItems: data.middleArea.sider.menuItems, id: focusArea.dataset['menuId'] })
+      //       return menuItem.key
+      //     },
+      //     set({ data, focusArea }, value) {
+      //       if (!focusArea) return
+      //       const menuItem = findMenuItem({ menuItems: data.middleArea.sider.menuItems, id: focusArea.dataset['menuId'] })
+      //       menuItem.key = value
+      //     }
+      //   }
+      // },
       {
         title: '访问地址',
         type: 'text',
@@ -307,14 +307,14 @@ export default {
               type: 'text',
               value: 'title'
             },
-            {
-              title: '唯一标识',
-              type: 'text',
-              value: 'key',
-              ifVisible(item) {
-                return item.menuType === 'menu';
-              },
-            },
+            // {
+            //   title: '唯一标识',
+            //   type: 'text',
+            //   value: 'key',
+            //   ifVisible(item) {
+            //     return item.menuType === 'menu';
+            //   },
+            // },
             {
               title: '访问地址',
               type: 'textArea',
