@@ -1,0 +1,29 @@
+{
+  "title": "导航页面容器",
+  "namespace": "mybricks.portal-pc.navigation-page-container",
+  "version": "1.0.0",
+  "description": "导航页面，可配置菜单",
+  "author": "MyBricks",
+  "author_name": "MyBricks",
+  "icon": "./icon.svg",
+  "data": "./data.json",
+  "runtime": "./runtime.tsx",
+  "runtime.edit": "./edit/runtime.tsx",
+  "editors": "./edit/editors.ts",
+  "slots": [
+    {
+      "id": "content",
+      "title": "内容区域",
+      "type": "scope",
+      "_inputs": [
+        {
+          "id": "pushRouter",
+          "title": "路由跳转",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    }
+  ]
+}
