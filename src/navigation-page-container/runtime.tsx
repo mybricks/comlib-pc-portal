@@ -59,15 +59,10 @@ function MiddleArea({ env, data, slots, context }) {
     setOpenKeys,
     triggerRouteChange,
     changeMenu
-  } = env.production
-      ? useMenuRouteProduction({
-        defaultOpenKeys: data.middleArea.sider.menuOpenKeys,
-        menuItems: data.middleArea.sider.menuItems
-      })
-      : useMenuRouteDebug({
-        defaultOpenKeys: data.middleArea.sider.menuOpenKeys,
-        menuItems: data.middleArea.sider.menuItems
-      });
+  } = useMenuRoute({
+    defaultOpenKeys: data.middleArea.sider.menuOpenKeys,
+    menuItems: data.middleArea.sider.menuItems
+  });
 
   useLayoutEffect(() => {
     /** 内容区组件调用 */
@@ -165,7 +160,7 @@ function MiddleArea({ env, data, slots, context }) {
   );
 }
 
-function useMenuRouteDebug({ defaultOpenKeys, menuItems }) {
+function useMenuRoute({ defaultOpenKeys, menuItems }) {
   const [pageUrl, setPageUrl] = useState<any>(false);
   const [staticResources] = useState<any>({
     menuSelectedKey: null,
@@ -219,83 +214,6 @@ function useMenuRouteDebug({ defaultOpenKeys, menuItems }) {
     return () => {
       history.pushState = _pushState;
     };
-  }, []);
-
-  return {
-    pageUrl,
-    staticResources,
-    menuSelectedKey,
-    setMenuSelectedKey,
-    openKeys,
-    setOpenKeys,
-    triggerRouteChange,
-    changeMenu
-  };
-}
-
-function useMenuRouteProduction({ defaultOpenKeys, menuItems }) {
-  const [pageUrl, setPageUrl] = useState<any>(false);
-  const [staticResources] = useState<any>({
-    menuSelectedKey: null,
-    pageUrlMap: { '/': undefined },
-    menuIdMap: {},
-    finalMenuItems: [],
-    routeManager: new RouteManager(),
-    homeKey: '/'
-  });
-  const [menuSelectedKey, setMenuSelectedKey] = useState<any>(null);
-  const [openKeys, setOpenKeys] = useState(defaultOpenKeys);
-  const triggerRouteChange = useCallback(() => {
-    const { homeKey, menuIdMap, pageUrlMap } = staticResources;
-    /** key 唯一标识 */
-    const currentRoute = staticResources.routeManager.getCurrentRoute();
-
-    let menuSelectedKey;
-    let pageUrl;
-    let key;
-
-    if (currentRoute) {
-      menuSelectedKey = menuIdMap[currentRoute];
-      pageUrl = pageUrlMap[currentRoute];
-      if (!pageUrl) {
-        /** 找不到pageUrl，跳首页 */
-        key = menuIdMap[homeKey];
-        menuSelectedKey = homeKey;
-        pageUrl = pageUrlMap[key];
-      }
-    } else {
-      menuSelectedKey = homeKey;
-      key = menuIdMap[homeKey];
-      pageUrl = pageUrlMap[key];
-    }
-
-    setOpenKeys((openKeys) => {
-      return Array.from(
-        new Set([...openKeys, ...findDefaultOpenMenuKeys(menuItems, menuSelectedKey)])
-      );
-    });
-    setPageUrl(pageUrl);
-    setMenuSelectedKey(menuSelectedKey);
-    staticResources.routeManager.replaceState(key);
-  }, []);
-  const changeMenu = useCallback((key) => {
-    if (!key) {
-      key = staticResources.homeKey;
-    }
-
-    const toKey = staticResources.menuIdMap[key];
-    staticResources.routeManager.goto(toKey);
-  }, []);
-
-  useMemo(() => {
-    const _pushState = history.pushState;
-    history.pushState = (...args) => {
-      args[2] = `${staticResources.routeManager.getRootPath()}/${args[2]}`;
-      return _pushState.call(history, ...args);
-    };
-    window.addEventListener('popstate', () => {
-      triggerRouteChange();
-    });
   }, []);
 
   return {
