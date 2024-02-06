@@ -1,7 +1,7 @@
 {
   "title": "导航页面容器",
   "namespace": "mybricks.portal-pc.navigation-page-container",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "导航页面，可配置菜单",
   "author": "MyBricks",
   "author_name": "MyBricks",
