@@ -12,7 +12,6 @@ import css from './runtime.less';
 const USER_INFO_LOCAL_KEY = (window as any).__LOGIN_COOKIE_KEY__;
 
 export default function ({ env, data, slots }) {
-  console.log('runtime');
   const [context] = useState({
     siderMenuClick: () => { },
     userInfo: JSON.parse(localStorage.getItem(USER_INFO_LOCAL_KEY) || '{}')

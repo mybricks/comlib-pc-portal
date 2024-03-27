@@ -21,5 +21,6 @@
       "./src/video/com.json",
       "./src/navigation-page-container/com.json"
     ]
-  }
+  },
+  "tags": "react"
 }

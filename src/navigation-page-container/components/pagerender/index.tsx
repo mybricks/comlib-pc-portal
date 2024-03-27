@@ -13,45 +13,55 @@ class AppManager {
     appMap: {}
   };
 
-  private _switch = _debounce(async (nextApp) => {
+  private _switch = async (nextApp) => {
+    console.log('switch -> unmount')
     await this.unmountCurApp();
-    if (!!this.microApps.appMap[nextApp]) {
-      await this.microApps.appMap[nextApp].mount();
+    console.log(`nextApp`, this.microApps.appMap, nextApp)
+    if (!!this.microApps.appMap[nextApp?.name]) {
+      await this.microApps.appMap[nextApp?.name].mount({ container: nextApp.container });
+      // @ts-ignore
+      this.microApps.curApp = this.microApps.appMap[nextApp?.name];
+      this.microApps.curApp.name = nextApp?.name
+    } else if (!this.microApps.appMap[nextApp?.name]) {
       // @ts-ignore
       this.nextApp = nextApp;
-      this.microApps.curApp = this.microApps.appMap[nextApp];
-      return Promise.resolve();
-    } else if (!!!this.microApps.appMap[nextApp]) {
-      // @ts-ignore
-      this.nextApp = nextApp;
+      if (!!window[`__comlibs_rt_`]) {
+        delete window[`__comlibs_rt_`]
+      }
       this.microApps.curApp = loadApp(nextApp);
-      return this.microApps.curApp?.mountPromise;
+      this.microApps.curApp.name = nextApp?.name
+      this.microApps.appMap[nextApp?.name] = this.microApps.curApp
     }
-    return Promise.resolve();
-  }, 300);
+  }
+    ;
 
   unmountCurApp = async () => {
     if (!this.microApps?.curApp) {
       return Promise.resolve();
     }
 
-    if (this.microApps?.curApp.getStatus?.() !== 'MOUNTED') {
-      return Promise.resolve();
+    if (this.microApps?.curApp.getStatus?.() === 'MOUNTED') {
+      console.log('begin to unmount', this.microApps.curApp?.unloadApp)
+      return this.microApps.curApp?.unmount?.();
     }
-
-    return this.microApps.curApp?.unmount?.();
+    return Promise.resolve();
   };
 
   switchApp = async (nextApp) => {
+    console.log(`switchApp`, nextApp, this.microApps?.curApp)
+    if (!nextApp?.name) {
+      console.error(`next app name should not be empty`)
+      return
+    }
     if (this.microApps?.curApp?.name === nextApp.name) {
-      return Promise.resolve();
+      return
     }
 
     return this._switch(nextApp);
   };
 
   switchInvalidApp = async ({ container }) => {
-    await appManager.unmountCurApp?.();
+    await this.unmountCurApp?.();
     this.microApps.curApp = loadInvalidApp?.({ container });
     return Promise.resolve();
   };
@@ -59,39 +69,34 @@ class AppManager {
   get curApp() {
     const curApp = this.microApps.curApp;
 
-    return (
-      curApp && {
-        ...curApp,
-        // @ts-ignore
-        name: this.nextApp?.name
-      }
-    );
+    return curApp
   }
 }
 
-const appManager = new AppManager();
+// const appManager = new AppManager();
 
 export function PageRender({ env, pageUrl }) {
   const eleRef = useRef(null);
   const [loading, setLoading] = useState(false);
-
+  const appManagerRef = useRef(new AppManager())
   useEffect(() => {
     if (!pageUrl) {
       console.warn('[micro app] invalid app,url is required');
-      appManager.switchInvalidApp({ container: eleRef.current });
+      appManagerRef.current.switchInvalidApp({ container: eleRef.current });
     } else {
       setLoading(true);
-      appManager
-        .switchApp({ name: pageUrl, entry: pageUrl, container: eleRef.current })
+      console.log(`appManager`, appManagerRef.current.curApp)
+      appManagerRef.current
+        .switchApp({ name: pageUrl, entry: pageUrl, container: eleRef.current, activeRule: () => true })
         .catch((err) => {
           console.error(err);
         })
         .finally(() => {
           let time = setInterval(() => {
             if (
-              appManager.curApp &&
-              pageUrl === appManager.curApp.name &&
-              appManager.curApp.getStatus?.() === 'MOUNTED'
+              appManagerRef.current.curApp &&
+              pageUrl === appManagerRef.current.curApp.name &&
+              appManagerRef.current.curApp.getStatus?.() === 'MOUNTED'
             ) {
               clearInterval(time);
               // @ts-ignore

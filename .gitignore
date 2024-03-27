@@ -13,3 +13,4 @@ package-lock.json
 .temp/
 .temp-pub/
 .temp-pub-items/
+/dist

@@ -186,8 +186,14 @@ export const loadApp = ({ name, entry, container }) => {
     return mockMainApp.loadApp({ entry, container })
   }
   return qiankun.loadMicroApp(
-    { name, entry, container },
-    { sandbox: true, singular: false }
+    { name, entry, container, props: { container } },
+    {
+      sandbox: {
+        // strictStyleIsolation: true,
+        experimentalStyleIsolation: true
+      },
+      singular: true
+    }
   )
 }
 
