@@ -1,5 +1,7 @@
 import { Data } from "./runtime";
-import { uuid, unitConversion } from "../utils";
+import { uuid, unitConversion, isBase64Image } from "../utils";
+
+const regex = /^data:image\/(png|jpeg|jpg|gif|bmp|webp|svg)/;
 
 export default {
   "@init"({ data, style, input, output, slot }) {
@@ -26,7 +28,8 @@ export default {
         options: {
           selectable: true,
           getTitle: (item, index) => {
-            return [item.url, `轮播图${index + 1}`];
+            let formattedUrl = isBase64Image(item.url || '') ? ((item.url || '').match(regex)[0] + '(超长省略) ') : item.url
+            return [formattedUrl, `轮播图${index + 1}`];
           },
           onSelect: (_id, index) => {
             if (index !== -1) {
