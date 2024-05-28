@@ -16,3 +16,7 @@ export function unitConversion (value: string) {
     return /^\d+(?:px)?$/.test(value) ? parseInt(value, 10) + 'px' : void 0
   }
 }
+
+export function isBase64Image(url) {
+  return url.startsWith('data:image/') && url.includes(';base64,');
+}
