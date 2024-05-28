@@ -1,6 +1,6 @@
 {
   "name": "comlib-pc-portal",
-  "version": "1.0.11",
+  "version": "1.0.15",
   "description": "通用门户组件库",
   "main": "index.js",
   "scripts": {
